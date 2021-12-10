@@ -1,0 +1,104 @@
+body{
+--background-color: white;
+--text-color:black;
+--btn-background-color:rgb(255, 145, 0);
+--btn-text-color:black;
+--transition-delay:1s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--transition-delay);
+
+    overflow: hidden;
+}
+
+
+body.dark{
+--background-color: #333;
+--text-color:white;
+--btn-background-color:rgb(255, 218, 97);
+--btn-text-color:#333;
+
+}
+
+.title{
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.theme-toggle-btn{
+background-color: var(--btn-background-color);
+color: var(--btn-text-color);
+border: none;
+font-size: 1.3rem;
+border-radius: 0.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
+cursor: pointer;
+outline: none;
+transition: var(--transition-delay);
+transform: scale(1);
+}
+
+.theme-toggle-btn:hover{
+    transform: scale(1.1);
+}
+
+.theme-toggle-icon{
+    margin-right: 0.5rem;
+}
+
+.sun-moon-container{
+--rotation:0;
+
+    position: absolute;
+    top: 0;
+   height: 200vmin;
+   pointer-events: none;
+   display: flex;
+   justify-content: center;
+   
+    transform: rotate(calc(var(--rotation) * 1deg));
+   transition: transform var(--transition-delay);
+   /*  */
+}
+
+/* .dark .sun-moon-container{
+    
+--rotation:180;
+} */
+
+.sun,.moon{
+    fill: var(--btn-background-color);
+    transition: opacity, fill, var(--transition-delay);
+    
+}
+
+.sun{
+    position: absolute;
+    top: 5%;
+    opacity: 1;
+}
+.dark .sun{
+     opacity: 0; 
+}
+
+.moon{
+    position: absolute;
+    bottom: 5%;
+    opacity: 0;
+    transform: rotate(180deg);
+}
+.dark .moon{
+     opacity: 1; 
+}
